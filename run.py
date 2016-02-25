@@ -14,8 +14,8 @@ try:
     launcher.check_installation()
     launcher.cleanup_session()
     launcher.load_bbio_file('cramps2_cape.bbio')
-    launcher.start_process("configserver -n Prusa-i3 ~/Machineface")
-    launcher.start_process('linuxcnc CRAMPS.ini')
+    launcher.start_process("configserver -d -n RigidBot /home/machinekit/Machineface") #~/Cetus")
+    launcher.start_process('machinekit -v CRAMPS.ini')
     while True:
         launcher.check_processes()
         time.sleep(1)
