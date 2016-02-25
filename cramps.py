@@ -38,6 +38,7 @@ def init_hardware():
                    c.find('EXTRUDER_1', 'THERMISTOR', defaultThermistor),
                    c.find('EXTRUDER_2', 'THERMISTOR', defaultThermistor)),
                 wait_name='temp')
+
     watchList.append(['temp', 0.1])
 
     base.usrcomp_status('temp', 'temp-hw', thread='servo-thread')
@@ -94,8 +95,8 @@ def setup_hardware(thread):
     hal.Pin('bb_gpio.p9.in-11.invert').set(True)
 
     # ADC
-    hal.Pin('temp.ch-04.value').link('hbp-temp-meas')
-    hal.Pin('temp.ch-05.value').link('e0-temp-meas')
+    hal.Pin('temp.ch-05.value').link('hbp-temp-meas')
+    hal.Pin('temp.ch-04.value').link('e0-temp-meas')
     hal.Pin('temp.ch-02.value').link('e1-temp-meas')
     hal.Pin('temp.ch-03.value').link('e2-temp-meas')
 
