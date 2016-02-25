@@ -32,7 +32,7 @@ def init_hardware():
                 interval=0.05,
                 filter_size=1,
                 cape_board='CRAMPS',
-                channels='04:%s,05:%s,02:%s,03:%s'
+                channels='05:%s,04:%s,02:%s,03:%s'
                 % (c.find('HBP', 'THERMISTOR', defaultThermistor),
                    c.find('EXTRUDER_0', 'THERMISTOR', defaultThermistor),
                    c.find('EXTRUDER_1', 'THERMISTOR', defaultThermistor),
@@ -79,10 +79,10 @@ def setup_hardware(thread):
     hal.Pin('bb_gpio.p8.in-07').link('limit-0-max')    # X
     hal.Pin('bb_gpio.p8.in-10').link('limit-1-home')   # Y
     hal.Pin('bb_gpio.p8.in-09').link('limit-1-max')    # Y
-#    hal.Pin('bb_gpio.p9.in-13').link('limit-2-home')   # Z
-#    hal.Pin('bb_gpio.p9.in-11').link('limit-2-max')    # Z
-    hal.Pin('bb_gpio.p9.in-13').link('limit-2-0-home')  # ZR
-    hal.Pin('bb_gpio.p9.in-11').link('limit-2-1-home')  # ZL
+    hal.Pin('bb_gpio.p9.in-13').link('limit-2-home')   # Z
+    hal.Pin('bb_gpio.p9.in-11').link('limit-2-max')    # Z
+#    hal.Pin('bb_gpio.p9.in-13').link('limit-2-0-home')  # ZR
+#    hal.Pin('bb_gpio.p9.in-11').link('limit-2-1-home')  # ZL
     # probe ...
 
     # Adjust as needed for your switch polarity
